@@ -34,7 +34,6 @@ def userInput(borne_low, borne_high, message):
 				return nombreChoisi
 			else:
 				print("Veuillez entrer un chiffre entre", borne_low, "et %d." % borne_high)
-				print()
 		except:
 			print("Caractere invalide. Veuillez entrer un chiffre.")
 

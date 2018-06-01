@@ -55,12 +55,15 @@ while rejouer == 1:
 """)
 	
 	if difficulteeChoisie == 1:
+		difficultee = "Facile"
 		sudokuChoisi = randrange(1,5)
 
 	elif difficulteeChoisie == 2:
+		difficultee = "Moyen"
 		sudokuChoisi = 6
 
 	else:
+		difficultee = "Difficile"
 		sudokuChoisi = 5
 
 	clear()
@@ -68,7 +71,7 @@ while rejouer == 1:
 	sudoku = {}
 	colTemp = 1
 	ligTemp = 0
-	with open('grille_%d.csv' % sudokuChoisi) as csvfile:
+	with open('Grilles/%(difficultee)/grille_%(numeroGrille).csv' % {"difficultee": difficultee, "numeroGrille": sudokuChoisi}) as csvfile:
 		readCSV = csv.reader(csvfile, delimiter=';')
 		for row in readCSV:
 			ligTemp += 1
